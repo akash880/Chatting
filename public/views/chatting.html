@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js'></script>
+		<title>Chat App</title>
+	</head>
+	
+	<body ng-app="myApp">
+		
+                <div ng-controller='ChatCtrl' ng-cloak="">
+                    <ul ng-if='notckicked' >
+                        <h1>Click below to any user to chat</h1>
+				<li data-ng-repeat="Objects in names" ng-click="callChannel(Objects.userid,Objects.name)">
+					<p>{{Objects.name}}</p>
+				</li>
+                    </ul>
+			
+<!--			<button size='100' ng-click='sendMessage()'>Submit</button>
+			<br>
+			<p>Filter Messages:-->
+<!--			<input type="text" ng-model='filterText'>-->
+			<ul>
+<!--				<li ng-repeat='text in messages | filter : filterText'>
+					<p>{{text.username}} - {{text.message}}</p>
+				</li>-->
+			</ul>
+                        
+                        <div ng-if='check'>
+                            <div >
+                                Lets Chat with {{namewith}}
+                            </div>
+                           <input type="text"  ng-model='message' placeholder='Enter your message here' size='50'></input>
+                          <button size='100' ng-click='sendMessage(message)'>Submit</button>
+                        </div>    
+		</div>
+		<script type='text/javascript' src='/socket.io/socket.io.js'></script>
+		<script type="text/javascript" src ="../js/chatting.js"></script>
+                <script type="text/javascript" src ="../js/constant.js"></script>
+	</body>
+</html>

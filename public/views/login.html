@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js'></script>
+		<title>Chat App</title>
+	</head>
+	
+	<body ng-app="loginApp">
+		<h1>GDG Waterloo Chat App</h1>
+		<div ng-controller='loginctrl'>
+			<input type="text" ng-model='userName' placeholder='Enter a username'>
+			<br>
+			<input type="text"  ng-model='password' placeholder='Enter yourPassword here' size='50'></input>
+			<br>
+			<button size='100' ng-click='login()'>Submit</button>
+			
+		
+		</div>
+		<script type='text/javascript' src='/socket.io/socket.io.js'></script>
+		<script type="text/javascript" src ="../js/client.js"></script>
+		<script type="text/javascript" src ="../js/constant.js"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+                
+	</body>
+</html>
