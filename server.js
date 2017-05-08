@@ -43,10 +43,11 @@ socket.on('setUsername', function(data) {
    });
    
     socket.on('sendMessage', function(data) {
+        console.log(data.userid_two);
 //       data.db= db1;
 //     chatobj.createChannelSocket(data).then(function(channelId){
 //         console.log(channelId);
-      usersForSocket[data.userid_two].emit('recv',data);
+      usersForSocket[data.userid_two].emit('recv',JSON.stringify(data));
   //   }).catch(function(){
          
    //  });
